@@ -1,5 +1,5 @@
 // src/api/transactions.js
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8081";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://puntored-backend.onrender.com";
 
 function authHeaders() {
   const token = localStorage.getItem("token");

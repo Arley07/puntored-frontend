@@ -1,5 +1,5 @@
 // src/api/buy.js
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8081";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://puntored-backend.onrender.com";
 
 export async function buy({ supplierId, cellPhone, value }) {
   const token = localStorage.getItem("token"); // <--- recupera token guardado en login
