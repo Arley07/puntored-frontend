@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { buyTopup, fetchSuppliers, createManualTransaction } from '../api/transactions.js'
 
 export default function TransactionForm() {
-  const [mode, setMode] = useState('buy') // 'buy' or 'manual'
+  const [mode, setMode] = useState('buy') 
   const [suppliers, setSuppliers] = useState([])
   const [supplierId, setSupplierId] = useState('8753')
   const [cellPhone, setCellPhone] = useState('3123450024')

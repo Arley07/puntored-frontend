@@ -1,9 +1,7 @@
-// src/components/TicketModal.jsx
 export default function TicketModal({ open, onClose, ticket }) {
   if (!open || !ticket) return null;
 
   const printTicket = () => {
-    // Abrimos una ventana con el HTML del ticket y disparamos print()
     const win = window.open("", "_blank", "width=480,height=640");
     const styles = `
       <style>
@@ -35,7 +33,6 @@ export default function TicketModal({ open, onClose, ticket }) {
     win.document.close();
     win.focus();
     win.print();
-    // opcional: win.close();
   };
 
   return (

@@ -1,4 +1,3 @@
-// src/components/TransactionModal.jsx
 import { useEffect, useState } from "react";
 import { listSuppliers } from "../api/transactions";
 import { buy } from "../api/buy";

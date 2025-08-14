@@ -1,4 +1,3 @@
-// src/components/TransactionsTable.jsx
 import { useEffect, useMemo, useState } from "react";
 import { getTransaction, listTransactions, softDeleteTransaction } from "../api/transactions";
 import TicketModal from "./TicketModal";

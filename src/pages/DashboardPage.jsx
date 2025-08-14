@@ -1,4 +1,3 @@
-// src/pages/DashboardPage.jsx
 import { useEffect, useRef, useState } from "react";
 import TransactionsTable from "../components/TransactionsTable";
 import TransactionModal from "../components/TransactionModal";
@@ -9,12 +8,12 @@ export default function DashboardPage() {
   const [ticketOpen, setTicketOpen] = useState(false);
   const [ticketData, setTicketData] = useState(null);
 
-  // Truco simple para refrescar la tabla desde aquí: forzamos remount con una key
+  
   const [tableKey, setTableKey] = useState(0);
   const refreshTable = () => setTableKey((k) => k + 1);
 
   const onCreated = (ctx) => {
-    // ctx?.ticket existe sólo si vino de /api/buy (SUCCESS).
+    
     refreshTable();
     if (ctx?.ticket) {
       setTicketData(ctx.ticket);
@@ -22,7 +21,7 @@ export default function DashboardPage() {
     }
   };
 
-  // Guard de login (si no hay token, a /login)
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) window.location.href = "/login";

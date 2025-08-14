@@ -1,14 +1,13 @@
-// src/api/buy.js
 const API_BASE = import.meta.env.VITE_API_BASE || "https://puntored-backend.onrender.com";
 
 export async function buy({ supplierId, cellPhone, value }) {
-  const token = localStorage.getItem("token"); // <--- recupera token guardado en login
+  const token = localStorage.getItem("token"); //  recupera token guardado en login
 
   const res = await fetch(`${API_BASE}/api/buy`, {
     method: "POST",
     headers: { 
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}` // <--- agrega token al header
+      "Authorization": `Bearer ${token}` //  agrega token al header
     },
     body: JSON.stringify({ supplierId, cellPhone, value: Number(value) }),
   });

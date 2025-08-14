@@ -1,4 +1,3 @@
-// src/api/transactions.js
 const API_BASE = import.meta.env.VITE_API_BASE || "https://puntored-backend.onrender.com";
 
 function authHeaders() {
@@ -34,5 +33,5 @@ export async function softDeleteTransaction(id) {
 export async function listSuppliers() {
   const res = await fetch(`${API_BASE}/api/suppliers`);
   if (!res.ok) throw new Error("No se pudo cargar proveedores");
-  return res.json(); // array de { id, name } o similar según tu DTO
+  return res.json(); 
 }
