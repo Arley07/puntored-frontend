@@ -1,35 +1,35 @@
 # Puntored Frontend (React + Vite + Tailwind)
 
-Este proyecto implementa:
-- Login de admin contra `/api/auth/login`.
-- Listado de transacciones con paginación (7 por página por defecto).
-- Filtros por celular y rango de fechas (server-side). Filtros por `supplierId` y `status` (client-side).
-- Soft delete (`DELETE /api/admin/transactions/{id}`).
-- Crear transacciones manuales (`POST /api/admin/transactions`).
-- Recargas a Puntored (`POST /api/buy`) con resumen/ticket.
+Interfaz de administración para la gestión de recargas y transacciones, conectada al backend de Puntored.
 
-## Requisitos
-- Node.js 18+
-- Backend corriendo en `http://localhost:8081` (como lo tienes con Spring Boot).
+## Funcionalidades
 
-## Cómo correr en desarrollo
-```bash
-cd puntored-frontend
-npm i
+- Inicio de sesión con credenciales de administrador.
+- Listado de transacciones con paginación y filtros.
+- Búsqueda por número de celular o proveedor.
+- Creación de transacciones manuales.
+- Soft delete de transacciones.
+- Recargas a Puntored con visualización de ticket.
+
+## 📦 Requisitos Previos
+
+- **Node.js 18+**
+- Backend corriendo en local o remoto.
+
+## ⚙️ Variables de Entorno
+
+Crear un archivo `.env` en la raíz del proyecto:
+
+# URL del backend en desarrollo o producción
+VITE_API_URL=http://localhost:8080 (O direccion donde este corriendo el back)
+
+# Ejecucion en local:
+- Instalar dependencias:
+npm install
+
+- Ejecutar en modo desarrollo:
 npm run dev
-```
-La app estará en `http://localhost:5173`. El proxy de Vite reenvía `/api/**` al backend para evitar CORS.
 
-## Variables de entorno (opcional)
-- `VITE_API_BASE`: URL del backend (por defecto `http://localhost:8081` para el proxy).
-  - En producción puedes compilar con `VITE_API_BASE=https://tu-backend.tld` y **deshabilitar** el proxy.
+- La app estará en:
+http://localhost:5173
 
-## Build de producción
-```bash
-npm run build
-npm run preview
-```
-
-## Despliegue
-- Opción 1: Servir los archivos estáticos de `dist/` en Nginx/Apache y configurar CORS en el backend.
-- Opción 2: Servir el frontend desde el mismo host del backend (p. ej., mover `dist/` a `src/main/resources/static` del backend).
